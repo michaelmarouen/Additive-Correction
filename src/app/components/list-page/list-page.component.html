@@ -2,7 +2,7 @@
 
   <ion-list *ngIf="additives$|async as additives">
 
-    <ion-item *ngFor="let item of additives" routerLink="xxx">
+    <ion-item *ngFor="let item of additives" [routerLink]="item.id">
       <ion-thumbnail slot="start">
         E{{item.id}}
       </ion-thumbnail>

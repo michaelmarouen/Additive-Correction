@@ -24,5 +24,12 @@ export class AdditivesService {
     this._data$.next(data);
   }
 
-  getItemById(id: string) {}
+  async getItemById(id: string) {
+    const data = this._data$.value;
+    if (!data) await this.load();
+    const result = this._data$.value.find(el => el.id ===  id);
+    if (!result) return alert('no data');
+
+    return result;
+  }
 }

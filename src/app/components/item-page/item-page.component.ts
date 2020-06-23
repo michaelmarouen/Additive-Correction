@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdditivesService } from 'src/app/services/additives/additives.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-item-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemPageComponent implements OnInit {
 
-  constructor() { }
+  item: any;
 
-  ngOnInit(): void {
+  constructor(
+    private _api: AdditivesService,
+    private _route: ActivatedRoute
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    // search current ID
+    const {id = null} = this._route.snapshot.params;
+    if (!id) return;
+    this.item = await this._api.getItemById(id);
   }
 
 }
