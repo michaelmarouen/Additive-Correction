@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss']
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
 
+  searchInput: string;
   constructor() { }
 
-  ngOnInit() {
-  }
 
+  search() {
+    console.log(this.searchInput);
+  }
 }

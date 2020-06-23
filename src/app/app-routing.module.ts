@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { ListPageComponent } from './components/list-page/list-page.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { ItemPageComponent } from './components/item-page/item-page.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,18 @@ const routes: Routes = [
       },
       {
         path: 'list',
-        component: ListPageComponent
+        children: [
+          {
+            path: '',
+            component: ListPageComponent
+          },
+          {
+            path: ':id',
+            component: ItemPageComponent
+          },
+        ]
       },
+
       {
         path: '',
         redirectTo: 'tabs/search',

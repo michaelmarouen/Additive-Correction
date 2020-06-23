@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdditivesService } from 'src/app/services/additives/additives.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor() { }
+  additives$: Observable<any>;
+  constructor(private _api: AdditivesService) { }
 
   ngOnInit() {
+    this._api.load();
+    this.additives$ = this._api.data$;
   }
 
 }
