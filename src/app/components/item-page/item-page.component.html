@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-back-button slot="start"></ion-back-button>
+    <ion-back-button color="light" slot="start"></ion-back-button>
     <ion-title color="light">Détails E{{item?.id}}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
         <p>{{item?.type}}</p>
       </ion-text>
       <hr/> 
-      <ion-text class="ion-padding-end">
+      <ion-text class="ion-padding-start">
         <p [ngStyle]="{'color': item?.level|color}">{{item?.level|level}}</p>
       </ion-text>
     </ion-card-content>

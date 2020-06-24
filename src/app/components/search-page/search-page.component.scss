@@ -1,0 +1,10 @@
+app-search-page {
+  ion-item {
+    font-size: 3rem;
+    --background: transparent;
+    max-width: 200px;
+    margin: auto;
+    --color: var(--ion-color-light)!important;
+    border-bottom: solid 3px var(--ion-color-light);
+  }
+}
