@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdditivesService } from 'src/app/services/additives/additives.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -8,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPageComponent {
 
   searchInput: string;
-  constructor() { }
+
+  constructor(
+    private _router: Router
+  ) { }
 
 
-  search() {
+  async search() {
     console.log(this.searchInput);
+    this._router.navigate([`../tabs/list/${this.searchInput}`]);
+    this.searchInput = '';
   }
 }

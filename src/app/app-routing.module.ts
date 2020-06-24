@@ -27,10 +27,9 @@ const routes: Routes = [
           },
         ]
       },
-
       {
         path: '',
-        redirectTo: 'tabs/search',
+        redirectTo: 'search',
         pathMatch: 'full'
       }
     ]

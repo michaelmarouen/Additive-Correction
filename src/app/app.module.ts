@@ -10,6 +10,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 import { ListPageComponent } from './components/list-page/list-page.component';
 import { ItemPageComponent } from './components/item-page/item-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LevelPipe } from './pipes/level/level.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     TabsComponent,
     SearchPageComponent,
     ListPageComponent,
-    ItemPageComponent
+    ItemPageComponent,
+    LevelPipe
   ],
   imports: [
     FormsModule,
