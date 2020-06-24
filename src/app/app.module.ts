@@ -11,6 +11,7 @@ import { ListPageComponent } from './components/list-page/list-page.component';
 import { ItemPageComponent } from './components/item-page/item-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LevelPipe } from './pipes/level/level.pipe';
+import { ColorPipe } from './pipes/color/color.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LevelPipe } from './pipes/level/level.pipe';
     SearchPageComponent,
     ListPageComponent,
     ItemPageComponent,
-    LevelPipe
+    LevelPipe,
+    ColorPipe
   ],
   imports: [
     FormsModule,

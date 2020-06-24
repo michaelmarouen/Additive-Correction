@@ -1,4 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="light">Search</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <ion-input [(ngModel)]="searchInput" type="search"></ion-input>
-  <ion-button (click)="search()">search</ion-button>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-input [(ngModel)]="searchInput" type="search"></ion-input>
+        <ion-button (click)="search()">search</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

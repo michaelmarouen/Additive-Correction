@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AdditivesService } from 'src/app/services/additives/additives.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-page',
   templateUrl: './item-page.component.html',
-  styleUrls: ['./item-page.component.scss']
+  styleUrls: ['./item-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ItemPageComponent {
 
