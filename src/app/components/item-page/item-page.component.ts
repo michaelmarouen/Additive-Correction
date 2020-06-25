@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AdditivesService } from 'src/app/services/additives/additives.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WikiService } from 'src/app/services/wiki/wiki.service';
 
 @Component({
   selector: 'app-item-page',
@@ -11,9 +12,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ItemPageComponent {
 
   item: any;
+  details: any = null;
 
   constructor(
     private _api: AdditivesService,
+    private _wiki: WikiService,
     private _route: ActivatedRoute,
     private _router: Router
   ) { }
@@ -26,6 +29,8 @@ export class ItemPageComponent {
     const item = await this._api.getItemById(id);
     if (!item) return this._router.navigate(['../tabs/search']);
     this.item = item;
+    // requerst for detail
+    this.details = await this._wiki.getByAdditive(id);
   }
 
 }
