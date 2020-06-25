@@ -7,7 +7,7 @@
 
   <ion-list *ngIf="additives$|async as additives" class="ion-no-padding">
 
-    <ion-item *ngFor="let item of additives" [routerLink]="item.id" class="ion-no-padding ion-no-margin">
+    <ion-item *ngFor="let item of additives.slice(0, max)" [routerLink]="item.id" class="ion-no-padding ion-no-margin">
       <ion-thumbnail slot="start" [ngStyle]="{'background-color': item?.level|color}">
         E{{item.id}}
       </ion-thumbnail>
@@ -20,6 +20,10 @@
       <ion-icon color="dark" name="arrow-forward-circle"></ion-icon> 
     </ion-item>
     
-
   </ion-list>
+  
+  <div class="ion-text-center ion-padding">
+    <ion-button *ngIf="(additives$|async)?.length >= max" (click)="loadMore()">+</ion-button>
+  </div>
+
 </ion-content>

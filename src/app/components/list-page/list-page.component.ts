@@ -10,11 +10,17 @@ import { Observable } from 'rxjs';
 export class ListPageComponent implements OnInit {
 
   additives$: Observable<any>;
+  max: number = 10;
+
   constructor(private _api: AdditivesService) { }
 
   ngOnInit() {
     this._api.load();
     this.additives$ = this._api.data$;
+  }
+
+  loadMore() {
+    this.max = this.max + 10;
   }
 
 }
