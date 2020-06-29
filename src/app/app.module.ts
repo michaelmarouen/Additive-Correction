@@ -12,6 +12,9 @@ import { ItemPageComponent } from './components/item-page/item-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LevelPipe } from './pipes/level/level.pipe';
 import { ColorPipe } from './pipes/color/color.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { UpdatesNotificationComponent } from './components/updates-notification/updates-notification.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,16 @@ import { ColorPipe } from './pipes/color/color.pipe';
     ListPageComponent,
     ItemPageComponent,
     LevelPipe,
-    ColorPipe
+    ColorPipe,
+    UpdatesNotificationComponent
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
