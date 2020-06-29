@@ -15,6 +15,7 @@ import { ColorPipe } from './pipes/color/color.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UpdatesNotificationComponent } from './components/updates-notification/updates-notification.component';
+import { ToastComponent } from './shared/toast/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdatesNotificationComponent } from './components/updates-notification/
     ItemPageComponent,
     LevelPipe,
     ColorPipe,
-    UpdatesNotificationComponent
+    UpdatesNotificationComponent,
+    ToastComponent
   ],
   imports: [
     FormsModule,
